@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href='https://fonts.googleapis.com/css?family=Space Grotesk' rel='stylesheet'>
+  </head>
+  <body>
+    <div class="container">
+      <section class="cards">
+        <div class="card-back credit">
+         <div class="display-cvc"><p>000</p></div>
+        </div>
+
+        <div class="card-front credit">
+          <p class="card-code">0000 0000 0000 0000</p>
+          <div class="name-mt-yr">
+            <p class="full-name">JANE APPLESEED</p>
+            <div class="mt-yr">
+              <p class="month">00</p>
+              <p>/</p>
+              <p class="year">00</p>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="card-details">
+        <form action="#">
+          <div class="form-group">
+            <label for="fName"> CARDHOLDER NAME</label>
+            <input type="text" id="fName" class="f-name" placeholder="e.g. Jane Appleseed"/>
+          </div>
+
+          <div class="form-group">
+            <label for="cardNum"> CARD number</label>
+            <input type="number" id="cardNum" class="card-num" placeholder="e.g. 1234 5678 9123 0000"/>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              <label for="expMt"> EXP. DATE </label>
+              <input type="number" id="expMt" class="exp-month" placeholder="MM"/>
+            </div>
+
+            <div class="form-group">
+              <label for="expYr"> (MM/YY)</label>
+              <input type="number" id="expYr" class="exp-year" placeholder="YY"/>
+            </div>
+
+            <div class="form-group">
+                <label for="cvc"> CVC</label>
+                <input type="number" id="cvc" class="cvc" placeholder="e.g. 123">
+            </div>
+          </div>
+
+          <input type="submit" value="Confirm" id="submitBtn">
+        </form>
+      </section>
+    </div>
+
+
+    <script src="app.js"></script>
+  </body>
+</html>
