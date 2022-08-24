@@ -1,0 +1,146 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'space grotesk';
+}
+.container{
+    width: 100vw;
+
+}
+.cards{
+    height: 230px;
+    width: 100%;
+    background:url(https://iili.io/rGIZXe.png) no-repeat;
+    background-size: cover;
+    position: relative;
+    display: grid;
+    place-content: center;
+}
+.credit{
+    width:270px;
+    height:160px;
+    border-radius:5px;
+    
+}
+/* back of card design */
+.card-back{
+    background-color: #fcfafa;
+    position: relative;
+    display:flex;
+    transform: translateX(10%) translateY(45%);
+}
+.card-back::before{
+    content: "";
+    width: 100%;
+    height: 30px;
+    background-color: rgb(59, 59, 59);
+    position: absolute;
+    top: 20px;
+}
+.display-cvc{
+width: 80%;
+height: 30px;
+background-color: rgb(163, 163, 163);
+margin: auto;
+border-radius: 5px;
+padding: 5px;
+display: flex;
+align-items: center;
+justify-content: right;
+}
+.display-cvc p{
+    text-align: right;
+    color: #fff;
+}
+
+.card-front{
+    background-image:url(https://iili.io/r16lYg.png) ;
+    background-size: cover;
+    transform: translateX(-10%) translateY(5%);
+    padding: 10%;
+}
+.card-front::before{
+    content: "";
+    background-color: #fff;
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    top:15%;
+}
+.card-front::after{
+    content: "";
+    border: 2px solid #fff;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top:20%;
+    left: 25%;
+}
+.card-code{
+    color: #fff;
+    font-size: 1.2em;
+    width: fit-content;
+    margin: auto;
+    transform: translateY(55px);
+}
+.name-mt-yr{
+    display: flex;
+    justify-content: space-between;
+    font-size: .7em;
+    color: #fff;
+    transform: translateY(70px);
+}
+
+form{
+    padding: 25% 5% 5%;
+}
+label{
+    font-size: .7em;
+    font-weight: 700;
+    color: hsl(280, 3%, 19%);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+input{
+    margin:0px 0 10px;
+    padding: 12px 0 12px 12px;
+    border-radius: 7px;
+    border: 1px solid #cccccc;
+    font-size: .9em;
+    font-weight: 800;
+}
+#submitBtn{
+    width: 100%;
+    background-color:hsl(278, 68%, 11%);
+    margin-top: 10px;
+    color: #fff;
+    font-size: 16px;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 100%;
+    justify-content: space;
+}
+#expMt, #expYr{
+    flex-basis: 25%;
+    width: 100%;
+}
+.mt-yr{
+    display: flex;
+}
+
+#cvc{
+    flex-basis: 60%;
+    width:auto;
+}
