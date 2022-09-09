@@ -68,13 +68,14 @@ class UI{
                 const alpErr = "Wrong format, alphabets only";
                const empty = "Field can't be blank";
 
-               else if(!input.value.match(letters)) {
-                        UI.showAlerts("wrong format, 2 names expected (alphabets only)", "form-group-1");
+               if(input.classList.contains("f-name")) {
+                    if(input.value === "") {
+                        UI.showAlerts(empty, "form-group-1");
                         input.classList.add("invalid-input");
                         input.classList.add("invalid");
                     }
                     else if(!input.value.match(letters)) {
-                        UI.showAlerts(alpErr, "form-group-1");
+                        UI.showAlerts("wrong format, 2 names expected (alphabets only)", "form-group-1");
                         input.classList.add("invalid-input");
                         input.classList.add("invalid");
                     }
@@ -169,12 +170,14 @@ class UI{
                 }
     }
 }
+
 // show form input on cards in real time
 const inputs = document.querySelectorAll("input").forEach(input => {
     input.addEventListener("keyup", e => {
         UI.typewriter(e.target);
     });
 });
+
 
 // validate form on input field change
 document.querySelectorAll(".input").forEach(input => {
