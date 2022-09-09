@@ -68,9 +68,8 @@ class UI{
                 const alpErr = "Wrong format, alphabets only";
                const empty = "Field can't be blank";
 
-               if(input.classList.contains("f-name")) {
-                    if(input.value === "") {
-                        UI.showAlerts(empty, "form-group-1");
+               else if(!input.value.match(letters)) {
+                        UI.showAlerts("wrong format, 2 names expected (alphabets only)", "form-group-1");
                         input.classList.add("invalid-input");
                         input.classList.add("invalid");
                     }
