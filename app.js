@@ -169,7 +169,6 @@ class UI{
                 }
     }
 }
-
 // show form input on cards in real time
 const inputs = document.querySelectorAll("input").forEach(input => {
     input.addEventListener("keyup", e => {
