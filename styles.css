@@ -1,31 +1,44 @@
 *{
-    padding: 0%;
-    margin: 0%;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
     font-family: 'space grotesk';
 }
 .container{
     width: 100vw;
-
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+:root{
+    --primary: #21092f ;
+    font-size: 16px;
+    --error-red: hsl(0, 100%, 66%);
 }
 .cards{
     height: 230px;
     width: 100%;
     background:url(https://iili.io/rGIZXe.png) no-repeat;
     background-size: cover;
+    background-position: right;
     position: relative;
     display: grid;
     place-content: center;
+    margin-bottom: 4.5em;
 }
 .credit{
-    width:270px;
-    height:160px;
-    border-radius:5px;
+    
+    width: 77vw;
+    max-width: 300px;
+    height:9em;
+    border-radius:.4em;
+    padding: 7%;
+    letter-spacing: .1em;
     
 }
 /* back of card design */
 .card-back{
-    background-color: #fcfafa;
+    background-color: #eeeded;
     position: relative;
     display:flex;
     transform: translateX(10%) translateY(45%);
@@ -33,14 +46,15 @@
 .card-back::before{
     content: "";
     width: 100%;
-    height: 30px;
+    height: 2.1em;
     background-color: rgb(59, 59, 59);
     position: absolute;
-    top: 20px;
+    top: 1.05em;
+    left: 0;
 }
 .display-cvc{
-width: 80%;
-height: 30px;
+width: 94%;
+height: 1.8em;
 background-color: rgb(163, 163, 163);
 margin: auto;
 border-radius: 5px;
@@ -52,95 +66,262 @@ justify-content: right;
 .display-cvc p{
     text-align: right;
     color: #fff;
+    font-size: .6em;
 }
 
 .card-front{
     background-image:url(https://iili.io/r16lYg.png) ;
     background-size: cover;
     transform: translateX(-10%) translateY(5%);
-    padding: 10%;
 }
 .card-front::before{
     content: "";
     background-color: #fff;
     position: absolute;
-    width: 34px;
-    height: 34px;
+    width: 1.7em;
+    height: 1.7em;
     border-radius: 50%;
     top:15%;
 }
 .card-front::after{
     content: "";
-    border: 2px solid #fff;
+    border: 1.5px solid #fff;
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: .6em;
+    height: .6em;
     border-radius: 50%;
     top:20%;
-    left: 25%;
+    left: 21%;
 }
 .card-code{
     color: #fff;
-    font-size: 1.2em;
+    font-size: 1em;
     width: fit-content;
-    margin: auto;
-    transform: translateY(55px);
+    transform: translateY(3.5em);
+    font-weight:500;
+
 }
 .name-mt-yr{
     display: flex;
     justify-content: space-between;
-    font-size: .7em;
+    font-size: .5em;
     color: #fff;
-    transform: translateY(70px);
+    transform: translateY(8.5em);
+    text-transform: uppercase;
 }
-
-form{
-    padding: 25% 5% 5%;
+.mt-yr{
+    display: flex;
+    justify-content: space-around;
+}
+.card-details{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+}
+.form, .success{
+    width: 100%;
+    max-width: 550px;
+    padding:5%;
 }
 label{
     font-size: .7em;
-    font-weight: 700;
+    font-weight: bolder;
     color: hsl(280, 3%, 19%);
     text-transform: uppercase;
-    letter-spacing: 1px;
-}
-input{
-    margin:0px 0 10px;
-    padding: 12px 0 12px 12px;
-    border-radius: 7px;
-    border: 1px solid #cccccc;
-    font-size: .9em;
+    letter-spacing: 2px;
     font-weight: 800;
 }
-#submitBtn{
+
+input{
+    padding: 12px 0 12px 12px;
+    border-radius: 6px;
+    border: 1px solid #7070707a;
+    font-size: .9em;
+    font-weight: 800;
+    cursor: pointer ;
+    transition: .5s;
+    position: relative;
+    margin-bottom: 10px;
+}
+input::placeholder{
+    color: #7070707a;
+}
+.input:hover{
+  border: 1px solid var(--primary);
+}
+.btn{
     width: 100%;
-    background-color:hsl(278, 68%, 11%);
+    background-color:var(--primary);
     margin-top: 10px;
     color: #fff;
     font-size: 16px;
+    border-radius: 10px;
+    padding:15px;
+    border: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 .form-group{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 9px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-bottom: 10px;
 }
 
 .row{
     display: flex;
-    flex-direction: row;
     gap: 5px;
-    width: 100%;
-    justify-content: space;
 }
-#expMt, #expYr{
-    flex-basis: 25%;
-    width: 100%;
-}
-.mt-yr{
+.form-group-3{
     display: flex;
+    gap: 5px;
+    width: 75%;
+    max-width: 270px;
+    height: fit-content;
+    position: relative;
+}
+.form-group-3 .form-group{
+    margin-bottom: 0;
+}
+.exp-month,.exp-year{
+    width: 100%;
+}
+.cvc{
+    width: 100%;
+    margin-left: 2px;
+}
+.alert{
+    color:var(--error-red);
+    font-size: 0.62em;
+    width: 100%;
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.success{
+    align-items: center;
+    justify-items: center;
+    position: absolute;
+    top: 0;
+    background-color:#fff;
+    height: 100%;
+    display: none; 
+
+}
+.show{
+    display: grid;
+}
+.invalid-input{
+    border: 1px solid var(--error-red);
+}
+.success h1,h3{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 1px;
+}
+.success h3{
+    font-size: 1em;
+    color: #807f7f;
+}
+.success .check{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #21092f;
+    display: grid;
+    place-content: center;
+}
+.success .check-content{
+    width: 25px;
+    height: 12px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(-40deg) ;
+    margin-bottom: 10px;
+}
+@media only screen and (min-width:360px){
+    :root{
+        font-size: 18px;
+    }
+    .card-code{
+        font-size: 1em;
+}
 }
 
-#cvc{
-    flex-basis: 60%;
-    width:auto;
+@media only screen and (min-width:1024px){
+    :root{
+        font-size: 18px;
+    }
+    .container{
+        flex-direction: row;
+        height: 100vh;
+    }
+    .cards{
+        height: 100vh;
+        width: 30%;
+        background-image: url(https://iili.io/63kZ0B.png);
+    }
+    .credit{
+        margin-left: 45%;
+        max-width:20em ;
+        height: 11em;
+        border-radius: 10px;
+    }
+    .card-back{
+        transform: translateY(105%) translateX(10%);
+    }
+    .card-back::before{
+        height: 2.4em;
+    }
+
+    .card-front{
+        transform: translateY(-105%) translateX(-15%);
+    }
+    .card-front::after{
+        left: 3.9em;
+    }
+    .card-code{
+        font-size: 1.3em;
+        width: fit-content;
+    }
+    .name-mt-yr{
+        font-size: .7em;
+
+    }
+    .card-details{
+        width: 70%;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+    }
+    .form{
+        width:50%;
+        min-width: 350px;
+        margin-left: 15%;
+        max-width: 490px;
+        padding: 3%;
+    }
+    input{
+        padding: .5em;
+    }
+   .success{
+    width: 50%;
+    min-width: 350px;
+    padding: 20% 0;
+   max-width: 500px;
+   margin-left: 15%;
+   }
+}
+@media only screen and (min-width:1440px) {
+    :root{
+        font-size: 24px;
+    }
+   
+    .card-code{
+        font-size: 1.2em;
+    }
 }
