@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Interactive-Card</title>
+    <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Space Grotesk"
@@ -12,10 +12,12 @@
     />
   </head>
   <body>
-    <div class="container">
+    <main class="container">
       <section class="cards">
         <div class="card-back credit">
-          <div class="display-cvc value"><p>000</p></div>
+          <div class="display-cvc value">
+            <p>000</p>
+          </div>
         </div>
 
         <div class="card-front credit">
@@ -49,33 +51,38 @@
               type="text"
               id="cardNum"
               class="card-num input"
+              maxlength="16"
+              minlength="16"
               placeholder="e.g. 1234 5678 9123 0000"
             />
           </div>
 
           <div class="row">
             <div class="form-group-3">
-            <div class="form-group">
-              <label for="expMt"> EXP. DATE </label>
-              <input
-                type="text"
-                id="expMt"
-                class="exp-month input"
-                placeholder="MM"
-              />
-            </div>
+              <div class="form-group">
+                <label for="expMt"> EXP. DATE </label>
+                <input
+                  type="text"
+                  id="expMt"
+                  class="exp-month input"
+                  maxlength="2"
+                  minlength="2"
+                  placeholder="MM"
+                />
+              </div>
 
-            <div class="form-group">
-              <label for="expYr"> (MM/YY)</label>
-              <input
-                type="text"
-                id="expYr"
-                class="exp-year input"
-                placeholder="YY"
-              />
+              <div class="form-group">
+                <label for="expYr"> (MM/YY)</label>
+                <input
+                  type="text"
+                  id="expYr"
+                  class="exp-year input"
+                  maxlength="2"
+                  minlength="2"
+                  placeholder="YY"
+                />
+              </div>
             </div>
-            </div>
-        
 
             <div class="form-group form-group-5">
               <label for="cvc"> CVC</label>
@@ -83,12 +90,19 @@
                 type="text"
                 id="cvc"
                 class="cvc input"
+                maxlength="3"
+                minlength="3"
                 placeholder="e.g. 123"
               />
             </div>
           </div>
 
-          <input type="submit" value="Confirm" class="btn submit-btn" id="submitBtn" />
+          <input
+            type="submit"
+            value="Confirm"
+            class="btn submit-btn"
+            id="submitBtn"
+          />
         </form>
 
         <div class="success">
@@ -98,7 +112,7 @@
           <button class="btn" id="continue">Continue</button>
         </div>
       </section>
-    </div>
+    </main>
 
     <script src="app.js"></script>
   </body>
