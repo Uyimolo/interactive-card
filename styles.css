@@ -20,20 +20,19 @@
     width: 100%;
     background:url(https://iili.io/rGIZXe.png) no-repeat;
     background-size: cover;
-    background-position: right;
     position: relative;
     display: grid;
     place-content: center;
     margin-bottom: 4.5em;
 }
 .credit{
-    
     width: 77vw;
     max-width: 300px;
     height:9em;
     border-radius:.4em;
     padding: 7%;
     letter-spacing: .1em;
+    color: #fff;
     
 }
 /* back of card design */
@@ -64,11 +63,8 @@ align-items: center;
 justify-content: right;
 }
 .display-cvc p{
-    text-align: right;
-    color: #fff;
     font-size: .6em;
 }
-
 .card-front{
     background-image:url(https://iili.io/r16lYg.png) ;
     background-size: cover;
@@ -94,18 +90,15 @@ justify-content: right;
     left: 21%;
 }
 .card-code{
-    color: #fff;
     font-size: 1em;
     width: fit-content;
     transform: translateY(3.5em);
     font-weight:500;
-
 }
 .name-mt-yr{
     display: flex;
     justify-content: space-between;
     font-size: .5em;
-    color: #fff;
     transform: translateY(8.5em);
     text-transform: uppercase;
 }
@@ -130,17 +123,15 @@ label{
     color: hsl(280, 3%, 19%);
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-weight: 800;
 }
 
 input{
     padding: 12px 0 12px 12px;
     border-radius: 6px;
-    border: 1px solid #7070707a;
+    border: 1px solid #e0e0e07a;
     font-size: .9em;
     font-weight: 800;
-    cursor: pointer ;
-    transition: .5s;
+    cursor: pointer;
     position: relative;
     margin-bottom: 10px;
 }
@@ -171,7 +162,6 @@ input::placeholder{
     position: relative;
     padding-bottom: 10px;
 }
-
 .row{
     display: flex;
     gap: 5px;
@@ -211,7 +201,6 @@ input::placeholder{
     background-color:#fff;
     height: 100%;
     display: none; 
-
 }
 .show{
     display: grid;
